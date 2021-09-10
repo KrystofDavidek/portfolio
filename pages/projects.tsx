@@ -1,5 +1,20 @@
-const projects = () => {
-  return <div className="p-4">projects page</div>;
+import React from "react";
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../data";
+
+const Projects = () => {
+  return (
+    <div className="">
+      <nav>Navbar</nav>
+      <div>
+        {projects.map((project) => (
+          <div>
+            <ProjectCard />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
-export default projects;
+export default Projects;
