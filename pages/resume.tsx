@@ -1,10 +1,12 @@
 import React from "react";
 import Bar from "../components/Bar";
 import { languages, tools } from "../data";
+import { motion } from "framer-motion";
+import { fadeInUp, routeAnimation } from "../animations";
 
 const resume = () => {
   return (
-    <div className="px-4 py-2">
+    <motion.div variants={routeAnimation} initial="initial" animate="animate" exit="exit" className="px-4 py-2">
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <h5 className="my-3 text-2xl font-bold">Education</h5>
@@ -24,24 +26,24 @@ const resume = () => {
         </div>
       </div>
       <div className="grid gap-6 md:grid-cols-2">
-        <div>
+        <motion.div variants={fadeInUp} initial="initial" animate="animate">
           <h5 className="my-3 text-2xl font-bold">Languages</h5>
           <div className="my02">
             {languages.map((language) => (
               <Bar data={language} key={language.name} />
             ))}
           </div>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div variants={fadeInUp} initial="initial" animate="animate">
           <h5 className="my-3 text-2xl font-bold">Tools</h5>
           <div className="my02">
             {tools.map((tool) => (
               <Bar data={tool} key={tool.name} />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,6 +2,7 @@ import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { GiTie } from "react-icons/gi";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const Sidebar = () => {
   const { theme, setTheme } = useTheme();
@@ -12,8 +13,16 @@ const Sidebar = () => {
 
   return (
     <div>
-      <img src="https://picsum.photos/id/1/200/300" alt="Example img" className="w-32 h-32 mx-auto rounded-full" />
-      <h3 className="my-4 text-3xl font-medium tracking-wider font-kaushan">
+      <Image
+        src="/images/profile.jpg"
+        alt="Profile imgage"
+        className="mx-auto rounded-full"
+        height="190"
+        width="150"
+        layout="intrinsic"
+        quality="100"
+      />
+      <h3 className="mt-2 mb-4 text-3xl font-medium tracking-wider font-kaushan">
         <span className="text-green">Kryštof </span>
         Davídek
       </h3>
@@ -26,7 +35,7 @@ const Sidebar = () => {
         <a href="">
           <AiFillYoutube className="w-8 h-8 cursor-pointer" />
         </a>
-        <a href="">
+        <a href="https://github.com/Sedoriko/">
           <AiFillGithub className="w-8 h-8 cursor-pointer" />
         </a>
         <a href="">

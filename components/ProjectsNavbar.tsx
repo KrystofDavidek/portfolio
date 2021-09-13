@@ -8,8 +8,9 @@ const NavItem: FC<{ value: Category | "all"; handlerFilterCategory: Function; ac
 }) => {
   let className = "capitalize cursor-pointer hover:text-green";
   if (active === value) {
-    className += "text-green";
+    className += " text-green";
   }
+
   return (
     <li onClick={() => handlerFilterCategory(value)} className={className}>
       {value}
