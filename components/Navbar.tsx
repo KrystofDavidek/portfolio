@@ -20,7 +20,7 @@ const NavItem: FC<{ activeItem: string; setActiveItem: Function; name: string; r
 };
 
 const Navbar = () => {
-  const [activeItem, setActiveItem] = useState<string>("initialState");
+  const [activeItem, setActiveItem] = useState<string>("About");
   const { pathname } = useRouter();
 
   useEffect(() => {

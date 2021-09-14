@@ -28,7 +28,7 @@ const resume = () => {
       <div className="grid gap-6 md:grid-cols-2">
         <motion.div variants={fadeInUp} initial="initial" animate="animate">
           <h5 className="my-3 text-2xl font-bold">Languages</h5>
-          <div className="my02">
+          <div className="my-2">
             {languages.map((language) => (
               <Bar data={language} key={language.name} />
             ))}

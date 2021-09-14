@@ -1,44 +1,23 @@
-import styled from "styled-components";
 import { fetcher } from "../lib/fetcher";
 import { ALL_POSTS } from "../lib/wordpress/api";
 import Link from "next/link";
 import { FC } from "react";
 import { IPost } from "../type";
 
-const RichParagraph = styled.div`
-  #rp p {
-    margin: 1rem 0 1rem 0;
-  }
-
-  #rp a {
-    color: #00f260;
-  }
-`;
-
-const createMarkup = (richText: string | undefined): { __html: string } => {
-  if (richText) {
-    return {
-      __html: richText,
-    };
-  } else {
-    return {
-      __html: "",
-    };
-  }
-};
-
 const blog: FC<{ allPosts: IPost[] }> = ({ allPosts }) => {
   const posts = allPosts;
 
   return (
     <div className="p-4" style={{ maxHeight: "80vh" }}>
-      <div className="grid grid-col-6">
+      <div className="grid grid-cols-12 gap-4">
         {posts.map((post) => (
-          <div key={post.id}>
-            <h1 className="text-2xl">{post.title}</h1>
-            <RichParagraph>
-              <div id="rp" dangerouslySetInnerHTML={createMarkup(post.extraPostInfo?.postContent)}></div>
-            </RichParagraph>
+          <div className="col-span-6 p-2 bg-gray-200 rounded-lg dark:bg-dark-200" key={post.slug}>
+            <h1 className="my-4 text-2xl">{post.title}</h1>
+            <p>{post.extraPostInfo?.previewInfo}</p>
+            <p className="my-2">{post.date}</p>
+            <Link href={`/post/${post.slug}`}>
+              <a className="hover:text-green">Read More...</a>
+            </Link>
           </div>
         ))}
       </div>

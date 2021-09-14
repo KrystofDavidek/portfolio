@@ -26,9 +26,9 @@ export interface IProject {
 export interface IPost {
   id: string;
   date: Date;
-  slug: string | null;
+  slug: string;
   title: string | null;
-  extraPostInfo: IExtraInfo | null;
+  extraPostInfo: IContent | null;
   author: {
     node: {
       firstName: string | null;
@@ -37,7 +37,7 @@ export interface IPost {
   };
 }
 
-export interface IExtraInfo {
+export interface IContent {
   postContent: string;
   previewImage: string | null;
   previewInfo: string | null;
