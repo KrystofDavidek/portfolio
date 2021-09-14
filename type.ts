@@ -23,4 +23,24 @@ export interface IProject {
   key_techs: string[];
 }
 
+export interface IPost {
+  id: string;
+  date: Date;
+  slug: string | null;
+  title: string | null;
+  extraPostInfo: IExtraInfo | null;
+  author: {
+    node: {
+      firstName: string | null;
+      nickname: string | null;
+    };
+  };
+}
+
+export interface IExtraInfo {
+  postContent: string;
+  previewImage: string | null;
+  previewInfo: string | null;
+}
+
 export type Category = "react" | "node" | "express" | "django" | "mongo";
