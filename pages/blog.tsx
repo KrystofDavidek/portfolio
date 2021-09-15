@@ -6,6 +6,16 @@ import { IPost } from "../type";
 
 const blog: FC<{ allPosts: IPost[] }> = ({ allPosts }) => {
   const posts = allPosts;
+  if (posts.length === 0) {
+    return (
+      <div className="flex flex-col p-4 text-center">
+        <h1 className="m-4 text-3xl">Wordpress connection is corrupted</h1>
+        <Link href="/">
+          <a className="my-4 text-green">Go back home</a>
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="p-4" style={{ maxHeight: "80vh" }}>
@@ -28,11 +38,19 @@ const blog: FC<{ allPosts: IPost[] }> = ({ allPosts }) => {
 export default blog;
 
 export const getStaticProps = async () => {
-  const response = await fetcher(ALL_POSTS);
-  const allPosts = response.data.posts.nodes;
-
-  return {
-    props: { allPosts },
-    revalidate: 1,
-  };
+  try {
+    const response = await fetcher(ALL_POSTS);
+    const allPosts = response.data.posts.nodes;
+    return {
+      props: { allPosts },
+      revalidate: 1,
+    };
+  } catch (error) {
+    console.error("Wordpress connection is corrupted! Error: " + error);
+    const allPosts: never[] = [];
+    return {
+      props: { allPosts },
+      revalidate: 1,
+    };
+  }
 };

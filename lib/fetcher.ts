@@ -6,6 +6,7 @@ export const fetcher = async (query: any, { variables }: any = {}) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query, variables }),
   });
+
   const json = await res.json();
   return json;
 };
