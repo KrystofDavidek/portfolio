@@ -18,8 +18,10 @@ const index = () => {
         <title></title>
       </Head>
       <h5 className="my-3 font-medium">
-        I am currently pursuing B.Tech Degree(Final Year) in Computer Science Engineering from Academy of Technology. I have 3+
-        years of experience in Web Development and I have a Youtube Channel where I teach Full Stack Web Development
+        <span className="text-2xl text-red-600">
+          This site is still in development, besides the future portfolio it is used to test different technologies, most recently
+          the intertwining of Strapi and Wordpress backend. All texts are illustrative for now.
+        </span>
       </h5>
       <div className="flex-grow p-4 mt-5 bg-gray-200 dark:bg-dark-100" style={{ marginLeft: "-1.5rem", marginRight: "-1.5rem" }}>
         <h6 className="my-3 text-xl font-bold tracking-wide">What I Offer</h6>

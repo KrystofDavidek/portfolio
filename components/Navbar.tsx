@@ -27,7 +27,8 @@ const Navbar = () => {
     if (pathname === "/") setActiveItem("About");
     if (pathname === "/projects") setActiveItem("Projects");
     if (pathname === "/resume") setActiveItem("Resume");
-    if (pathname === "/blog") setActiveItem("Blog");
+    if (pathname === "/wordpress") setActiveItem("Wordpress Blog");
+    if (pathname === "/strapi") setActiveItem("Strapi Blog");
   }, []);
 
   return (
@@ -37,7 +38,8 @@ const Navbar = () => {
         <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name="About" route="/" />
         <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name="Projects" route="/projects" />
         <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name="Resume" route="/resume" />
-        <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name="Blog" route="/blog" />
+        <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name="Wordpress Blog" route="/wordpress" />
+        <NavItem activeItem={activeItem} setActiveItem={setActiveItem} name="Strapi Blog" route="/strapi" />
       </div>
     </div>
   );

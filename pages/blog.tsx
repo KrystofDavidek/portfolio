@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FC } from "react";
 import { IPost } from "../type";
 
-const blog: FC<{ allPosts: IPost[] }> = ({ allPosts }) => {
+const Blog: FC<{ allPosts: IPost[] }> = ({ allPosts }) => {
   const posts = allPosts;
   if (posts.length === 0) {
     return (
@@ -35,7 +35,7 @@ const blog: FC<{ allPosts: IPost[] }> = ({ allPosts }) => {
   );
 };
 
-export default blog;
+export default Blog;
 
 export const getStaticProps = async () => {
   try {

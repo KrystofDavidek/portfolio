@@ -4,7 +4,7 @@ import { languages, tools } from "../data";
 import { motion } from "framer-motion";
 import { fadeInUp, routeAnimation } from "../animations";
 
-const resume = () => {
+const Resume = () => {
   return (
     <motion.div variants={routeAnimation} initial="initial" animate="animate" exit="exit" className="px-4 py-2">
       <div className="grid gap-6 md:grid-cols-2">
@@ -47,4 +47,4 @@ const resume = () => {
   );
 };
 
-export default resume;
+export default Resume;
